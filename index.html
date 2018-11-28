@@ -41,6 +41,12 @@
         });
         
         window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+
+        appInsights.queue.push(function () {
+        appInsights.context.addTelemetryInitializer(function (envelope) {
+                envelope.tags['ai.operation.name'] = "__censored__";
+            });
+        });
     </script>
 </head>
 

@@ -7,54 +7,54 @@
 window.addEventListener("load", function (e) {
     // Subscription button
     $(".navbar-header > a.navbar-brand.topnav").click(function() {
-        console.log("Clicked");
+        logEvent("action-subscription");
     });
 
     // Top navigation right buttons
     $(".navbar-nav.navbar-right > li:nth-child(1) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-about-top");
     });
     $(".navbar-nav.navbar-right > li:nth-child(2) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-services-top");
     });
     $(".navbar-nav.navbar-right > li:nth-child(3) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-contact-top");
     });
 
     // Social media buttons on top
     $(".intro-social-buttons > li:nth-child(1) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-twitter-top");
     });
     $(".intro-social-buttons > li:nth-child(2) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-github-top");
     });
     $(".intro-social-buttons > li:nth-child(3) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-linkedin-top");
     });
 
     // Social media buttons on bottom
     $(".banner-social-buttons > li:nth-child(1) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-twitter-bottom");
     });
     $(".banner-social-buttons > li:nth-child(2) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-github-bottom");
     });
     $(".banner-social-buttons > li:nth-child(3) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-linkedin-bottom");
     });
 
     // Bottom navigation left buttons
     $("footer .col-lg-12 > .list-inline > li:nth-child(1) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-home-bottom");
     });
     $("footer .col-lg-12 > .list-inline > li:nth-child(3) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-about-bottom");
     });
     $("footer .col-lg-12 > .list-inline > li:nth-child(5) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-services-bottom");
     });
     $("footer .col-lg-12 > .list-inline > li:nth-child(7) > a").click(function() {
-        console.log("Clicked");
+        logEvent("action-contact-bottom");
     });
 });
 
@@ -63,6 +63,8 @@ window.addEventListener("load", function (e) {
 //////////////////////////////
 
 // Log custom events
-function logTelemetryEvent() {
+function logEvent(name) {
+    if (!name) return;
 
+    appInsights.trackEvent(name);
 }
