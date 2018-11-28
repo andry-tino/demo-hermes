@@ -41,6 +41,15 @@
         });
         
         window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+
+        var enableFilter = false;
+        if (enableFilter) {
+            appInsights.queue.push(function () {
+                appInsights.context.addTelemetryInitializer(function (envelope) {
+                    envelope.tags['ai.operation.name'] = "__censored__";
+                });
+            });
+        }
     </script>
 </head>
 
