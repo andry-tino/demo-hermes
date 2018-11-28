@@ -7,64 +7,53 @@
 window.addEventListener("load", function (e) {
     // Subscription button
     $(".navbar-header > a.navbar-brand.topnav").click(function() {
-        logEvent("action-subscription");
+        // Log event here
     });
 
     // Top navigation right buttons
     $(".navbar-nav.navbar-right > li:nth-child(1) > a").click(function() {
-        logEvent("action-about-top");
+        // Log event here
     });
     $(".navbar-nav.navbar-right > li:nth-child(2) > a").click(function() {
-        logEvent("action-services-top");
+        // Log event here
     });
     $(".navbar-nav.navbar-right > li:nth-child(3) > a").click(function() {
-        logEvent("action-contact-top");
+        // Log event here
     });
 
     // Social media buttons on top
     $(".intro-social-buttons > li:nth-child(1) > a").click(function() {
-        logEvent("action-twitter-top");
+        // Log event here
     });
     $(".intro-social-buttons > li:nth-child(2) > a").click(function() {
-        logEvent("action-github-top");
+        // Log event here
     });
     $(".intro-social-buttons > li:nth-child(3) > a").click(function() {
-        logEvent("action-linkedin-top");
+        // Log event here
     });
 
     // Social media buttons on bottom
     $(".banner-social-buttons > li:nth-child(1) > a").click(function() {
-        logEvent("action-twitter-bottom");
+        // Log event here
     });
     $(".banner-social-buttons > li:nth-child(2) > a").click(function() {
-        logEvent("action-github-bottom");
+        // Log event here
     });
     $(".banner-social-buttons > li:nth-child(3) > a").click(function() {
-        logEvent("action-linkedin-bottom");
+        // Log event here
     });
 
     // Bottom navigation left buttons
     $("footer .col-lg-12 > .list-inline > li:nth-child(1) > a").click(function() {
-        logEvent("action-home-bottom");
+        // Log event here
     });
     $("footer .col-lg-12 > .list-inline > li:nth-child(3) > a").click(function() {
-        logEvent("action-about-bottom");
+        // Log event here
     });
     $("footer .col-lg-12 > .list-inline > li:nth-child(5) > a").click(function() {
-        logEvent("action-services-bottom");
+        // Log event here
     });
     $("footer .col-lg-12 > .list-inline > li:nth-child(7) > a").click(function() {
-        logEvent("action-contact-bottom");
+        // Log event here
     });
 });
-
-//////////////////////////////
-///// Set of utility functions
-//////////////////////////////
-
-// Log custom events
-function logEvent(name) {
-    if (!name) return;
-
-    appInsights.trackEvent(name);
-}
