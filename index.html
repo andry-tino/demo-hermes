@@ -7,7 +7,7 @@
     <meta name="description" content="A demo website for experimenting with Telemetry services">
     <meta name="author" content="Gaius Valerius Catullus">
 
-    <title>Lorem Ipsum</title>
+    <title>Cloud Services ltd</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,16 +19,9 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <!-- 
-    To collect user behavior analytics about your application, 
-    insert the following script into each page you want to track.
+    To collect user behavior analytics about the application, 
+    use the following script into each page you want to track.
     Place this code immediately before the closing </head> tag,
     and before any other scripts. Your first data will appear 
     automatically in just a few seconds.
@@ -37,10 +30,16 @@
         var appInsights=window.appInsights||function(a){
         function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
         }({
-            instrumentationKey:""
+            instrumentationKey:"" // Secret
         });
         
         window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+
+        appInsights.queue.push(function () {
+            appInsights.context.addTelemetryInitializer(function (envelope) {
+                //envelope.tags['ai.operation.name'] = "__censored__";
+            });
+        });
     </script>
 </head>
 
@@ -85,8 +84,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Lorem Ipsum</h1>
-                        <h3>Odi et amo, fortasse nequiris</h3>
+                        <h1>Cloud Services ltd</h1>
+                        <h3>Internet services for SMBs</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
@@ -119,11 +118,12 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                    <h2 class="section-heading">Large file storage</h2>
+                    <p class="lead">Our services will help you upload and manage all your files inside our ditributed system. A storage cluster will be assigned to you with dedicated memory and data services running 24/7.</p>
+                    <p>This image is <a target="_blank" href="http://www.freepik.com">Designed by Freepik</a>.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/ipad.jpg" alt="">
+                    <img class="img-responsive" src="img/a1.png" alt="">
                 </div>
             </div>
 
@@ -141,11 +141,13 @@
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <h2 class="section-heading">Fast document indexing</h2>
+                    <p class="lead">All resources you upload to our infrastructure will be indexed and registered. This allows you to retrieve each resource safely from any location at any time.</p>
+                    <p class="lead">Our Cloud API will also allow you to write programs and scripts to automate common tasks. To enable API access, you need to have a Premium Subscription.</p>
+                    <p>This image is <a target="_blank" href="http://www.freepik.com">Designed by Freepik</a>.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.jpg" alt="">
+                    <img class="img-responsive" src="img/a2.png" alt="">
                 </div>
             </div>
 
@@ -163,11 +165,14 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">Role definition &amp;<br>access management</h2>
+                    <p class="lead">Always stay on top of who can access your data. In the Control Pane, you will be able to define roles and users to grant specific access levels to your resources.</p>
+                    <p class="lead">Our infrastructure allows you to enable access tracking and high resolution logging, so you always know what is happening and who did what.</p>
+                    <p class="lead">Our Cloud automation, for Premium users, will allow you to create monitors to automate responses to events happening in your subscription.</p>
+                    <p>This image is <a target="_blank" href="http://www.freepik.com">Designed by Freepik</a>.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.jpg" alt="">
+                    <img class="img-responsive" src="img/a3.png" alt="">
                 </div>
             </div>
 
@@ -229,7 +234,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">No Copyright &copy; Lorem Ipsum 2060. All Rights Not Really Reserved</p>
+                    <p class="copyright text-muted small">No Copyright &copy; Cloud Services ltd (2199). All Rights Not Really Reserved</p>
                 </div>
             </div>
         </div>
