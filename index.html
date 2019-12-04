@@ -37,6 +37,7 @@
 
         appInsights.queue.push(function () {
             appInsights.context.addTelemetryInitializer(function (envelope) {
+                // Uncomment to be GDPR compliant
                 //envelope.tags['ai.operation.name'] = "__censored__";
             });
         });
